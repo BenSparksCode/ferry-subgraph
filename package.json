@@ -1,0 +1,22 @@
+{
+  "name": "ferry-subgraph",
+  "version": "1.0.0",
+  "description": "Subgraph for Ferry App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenSparksCode/ferry-subgraph.git"
+  },
+  "author": "Ben Sparks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenSparksCode/ferry-subgraph/issues"
+  },
+  "homepage": "https://github.com/BenSparksCode/ferry-subgraph#readme",
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.21.1"
+  }
+}
