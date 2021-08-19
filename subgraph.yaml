@@ -1,0 +1,32 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Ferry
+    network: mumbai
+    source:
+      address: "0x1BEc7A448e663bB0c738F5384aAA5C0746Ca2f98"
+      abi: Ferry
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - NFTMinted
+        - NFTNumberGenerated
+        - OwnershipTransferred
+        - SubscriptionPaid
+      abis:
+        - name: Ferry
+          file: ./abis/Ferry.json
+      eventHandlers:
+        - event: NFTMinted(indexed address,uint256,uint256)
+          handler: handleNFTMinted
+        - event: NFTNumberGenerated(indexed address,uint256)
+          handler: handleNFTNumberGenerated
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: SubscriptionPaid(indexed address,uint256,uint256)
+          handler: handleSubscriptionPaid
+      file: ./src/mapping.ts

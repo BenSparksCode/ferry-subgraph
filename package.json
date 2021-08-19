@@ -1,22 +1,16 @@
 {
-  "name": "ferry-subgraph",
-  "version": "1.0.0",
-  "description": "Subgraph for Ferry App",
-  "main": "index.js",
+  "name": "ferry",
+  "license": "UNLICENSED",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ bensparkscode/ferry",
+    "create-local": "graph create --node http://localhost:8020/ bensparkscode/ferry",
+    "remove-local": "graph remove --node http://localhost:8020/ bensparkscode/ferry",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 bensparkscode/ferry"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BenSparksCode/ferry-subgraph.git"
-  },
-  "author": "Ben Sparks",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BenSparksCode/ferry-subgraph/issues"
-  },
-  "homepage": "https://github.com/BenSparksCode/ferry-subgraph#readme",
   "dependencies": {
-    "@graphprotocol/graph-cli": "^0.21.1"
+    "@graphprotocol/graph-cli": "0.21.1",
+    "@graphprotocol/graph-ts": "0.20.0"
   }
 }
